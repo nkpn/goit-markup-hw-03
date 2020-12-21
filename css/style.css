@@ -1,5 +1,12 @@
 /* цвет главного текста background: #212121;
 цвет второстепенного текста background: #757575; */
+html{
+  box-sizing: border-box;
+}
+
+*, ::before, ::after{
+  box-sizing: inherit;
+}
 
 :root{
   --main-text-color:#212121;
@@ -8,6 +15,12 @@
   --blue-bg-color:#2196F3;
 }
 
+body {
+  margin: 0;
+  background-color: var(--main-bgc-color);
+  color: var(--primary-text-color);
+  font-family: Roboto, sans-serif;
+}
 
 a { 
   text-decoration: none;
@@ -37,39 +50,67 @@ li{
   text-decoration-color: #2196F3; 
 }
 
+/* Не работает убирание подчеркивания у эмейла и телефона
+.no-decoration:hover{
+  text-decoration: none;
+}*/
+
+
 .container{
   width: 1170px;
   margin: 0 auto;
   padding: 215px auto;
 }
 
+
+
 /* HEADER */
+
+.site-nav{
+  display: flex;
+}
+
+.site-nav .item:not(:last-child){
+  margin-right: 50px;
+}
 
 header{
   background: #FFFFFF;
-  border: 1px solid #ECECEC;
+  border-bottom: 2px solid #ECECEC;
 }
 
 header> .container{
  background: #FFFFFF;
  display: flex;
  align-items: center;
- justify-content: space-between;
+ justify-content: space-between; *
 }
 
-.container .header-list{
+.container{
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0px auto;
+}
+
+.main-nav{
   display: flex;
-  flex-direction: row;
+  align-items: center;
 }
 
-.header-item{
+
+.site-nav .link{
+  display: block;
   padding: 32px 0;
-  display: inline-block;
-  text-align: center;
-} 
+}
 
 .logo{
-  margin-right: 93px;
+  margin-right: 92px;
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
 }
 
 .page{
@@ -77,7 +118,7 @@ header> .container{
   background-color: var(--main-bg-color);
 }
 
-.web-header{
+.web{
   color: #2196f3;
   font-family: Raleway;
   font-weight: bold;
@@ -86,16 +127,47 @@ header> .container{
   letter-spacing: 0.03em;
 }
 
-.header-list>.header-item:not(:last-child){
-  margin-right: 40px;
+.site-nav .link{
+  display: block;
+  padding: 32px 0;
+  color: var(--main-text-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
 }
 
-.header-item a:hover{
+.site-nav .link a:hover{
   color: #2196F3;
   cursor: pointer;
 }
 
-.studio-header {
+.site-nav .link.current{
+  color:var(--blue-bg-color);
+}
+
+.auth-nav .link{
+  padding: 32px 0px;
+}
+
+.auth-nav .address-header:hover{
+  color:var(--blue-bg-color)
+}
+
+.address-header{
+  color: #757575;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.address-header:not(:last-child){
+  padding-right:50px;
+}
+
+.studio{
   color: #212121;
   font-family: Raleway;
   font-weight: bold;
@@ -104,83 +176,39 @@ header> .container{
   letter-spacing: 0.03em;
 }
 
-.header-list{
-  display:inline-block;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: var(--main-text-color)
+.address-header:hover,
+.address-header:focus{
+  color: var(--blue-bg-color);
 }
-
-
-
-.email-header{
-  display:block;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: #757575;  
-}
-
-.phone-number-header{
-    display:block;
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-    color: #757575;
-}
-
-.phone-number-header:hover{
-  color:#2196F3; 
-}
-
-.email-header:hover{
-  color:#2196F3; 
-}
-
 
 
 /* H1 SECTION */
 
 .h1-section{
   text-align: center;
-}
-
-.h1-section>.container{
- display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 200px 0;
   background: #2F303A;
+  text-align: center;
+  justify-content: center;
 }
 
 .h1-section-title{
-  display: block;
   font-family: Roboto;
   font-weight: 900;
   font-size: 44px;
-  line-height: 1,36;
-  text-align: center;
+  line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #FFFFFF;
   
 }
 
-.h1-section{
-  background: #2F303A;
-  padding: 200px 452px 280px 452px;
-}
 
 .button-order{
   background: #2196F3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border-style: none;
   font-family: Roboto;
   font-weight: bold;
   font-size: 16px;
@@ -188,14 +216,25 @@ header> .container{
   letter-spacing: 0.06em;
   color: #FFFFFF;
   margin-top: 40px;
-  width: 200px;
-  height: 50px;
-  display: flex;
+  padding: 10px 32px;
+  display: inline-block;
+  outline: transparent;
+  cursor: pointer;
+  min-width: 200px;
   justify-content: center;
   align-items: center;
 }
 
+.h1-section .container{
+  background-image: url(../images/hero.png);
+}
 
+.overlay{
+  max-width:1600px;
+  height: 600px;
+  margin: 0 auto;
+  padding-top: 200px;
+}
 
 /* Features section */
 
@@ -231,6 +270,7 @@ header> .container{
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--main-text-color);
+  padding-bottom: 10px;
 }
 
 
@@ -401,10 +441,19 @@ header> .container{
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.16;
+  line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
-  border-color:var(--primary-bg-color);
+  border-color:inherit;
+  padding: 6px 22px;
+  cursor: pointer;
+  border-radius: 4px;
+  border-color: transparent;
+}
+
+.button:hover, 
+.button:focus {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .primary-button a{
@@ -462,15 +511,20 @@ header> .container{
   height: auto;
 }
 
+.projects-list{
+  padding: 20px 24px;
+  border: 1px solid #EEEEEE;
+}
+
 .project-items-text{
-  font-size: 18px;
-  line-height: 2;
+  font-size: 16px;
+  line-height: 1.87;
   color: #757575;
-  padding: 4px 24px 20px 24px;
+  font-weight: normal;
 }
 
 .project-items-name{
-  font-size: 16px;
-  line-height: 1.87;
-  padding: 20px 24px 4px 24px;
+  font-size: 18px;
+  line-height: 2;
+  font-weight: bold;
 }
