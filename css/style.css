@@ -77,6 +77,7 @@ li{
 header{
   background: #FFFFFF;
   border-bottom: 2px solid #ECECEC;
+  padding: 32px 0;
 }
 
 header> .container{
@@ -126,7 +127,8 @@ header> .container{
 
 .site-nav .link{
   display: block;
-  padding: 32px 0;
+  padding: 0 auto;
+  /*padding: 32px 0;*/
   color: var(--main-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -183,7 +185,7 @@ header> .container{
 
 .h1-section{
   text-align: center;
-  padding: 200px 0;
+ /* padding: 200px 0;*/
   background: #2F303A;
   text-align: center;
   justify-content: center;
@@ -197,7 +199,11 @@ header> .container{
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #FFFFFF;
-  
+}
+
+.heading-container{
+  width: 696px;
+  margin: 0 auto;
 }
 
 
@@ -222,15 +228,18 @@ header> .container{
   align-items: center;
 }
 
-.h1-section .container{
+.h1-section .overlay{
   background-image: url(../images/hero.png);
+  padding: 0 auto;
+  background-position: center;
+  height: 600px;
+  padding-top: 200px;
+  object-fit: scale-down;
 }
 
 .overlay{
   max-width:1600px;
-  height: 600px;
   margin: 0 auto;
-  padding-top: 200px;
 }
 
 /* Features section */
@@ -296,6 +305,10 @@ header> .container{
   letter-spacing: 0.03em;
   color: var(--main-text-color);
   margin-bottom: 50px;
+}
+
+.our-team .h2-title{
+  padding-top: 94px;
 }
 
 .container .card-list{
