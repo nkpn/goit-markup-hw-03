@@ -84,16 +84,12 @@ header> .container{
  background: #FFFFFF;
  display: flex;
  align-items: center;
- justify-content: space-between; *
-
+ justify-content: space-between; 
 }
 
 .container{
   width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
   margin: 0px auto;
-  
 }
 
 .main-nav{
@@ -246,6 +242,8 @@ header> .container{
 
 .features{
   background-color: #ffffff;
+  padding-top: 90px;
+  padding-bottom: 94px;
 }
 
 .features>.container{
@@ -260,8 +258,7 @@ header> .container{
 
 .features-list .features-item{
   display: block;
-  margin-top: 90px;
-  margin-bottom: 94px;
+  
 }
 
 .features-list .features-item:not(:last-child){
@@ -289,6 +286,8 @@ header> .container{
 
 .what-are-we-doing{
   background-color: #ffffff;
+  padding-right: 30px;
+  padding-bottom: 94px;
 }
 
 .what-are-we-doing .container{
@@ -307,10 +306,6 @@ header> .container{
   margin-bottom: 50px;
 }
 
-.our-team .h2-title{
-  padding-top: 94px;
-}
-
 .container .card-list{
   display: flex;
   flex-wrap: wrap;
@@ -319,8 +314,6 @@ header> .container{
 
 .what-are-we-list{
   width: calc((100% - 60px) / 3);
-  margin-right: 30px;
-  margin-bottom: 94px;
 }
 
 .what-are-we-list:nth-child(3n) {
@@ -332,13 +325,15 @@ header> .container{
 
 .our-team{
   background: #F5F4FA;
+  padding-bottom: 94px;
+  padding-top: 94px;
 }
 
 .card-person{
   background: #FFFFFF;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-  margin-bottom: 94px;
+  
 }
 
 .name{
@@ -423,17 +418,20 @@ header> .container{
 
 /* Buttons */
 
-.container .header-list{
+.projects .container{
   display: flex;
+  align-content: center;
+  justify-content: center;
   flex-direction: row;
+  padding-top: 94px;
+  padding-bottom: 50px;
 }
 
 .list-buttons{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 94px;
-  padding-bottom: 36px;
+  align-content: center;
 }
 
 .list-item-buttons:not(:last-child){
@@ -477,15 +475,17 @@ header> .container{
 
 /* Projects */
 
- .container .portfolio-list{
-  display: flex;
-  padding-bottom: 74px; 
+.portfolio{
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: -30px;
 }
 
-.container .portfolio-list{
+ .container .portfolio-list{
   display: flex;
   flex-wrap: wrap;
-
+  padding-bottom: 94px; 
+  padding-left: 0px;
 }
 
 .projects{
